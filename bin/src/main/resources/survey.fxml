@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="420.0" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.SurveyController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+   <Label id="title" text="SURVEY" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="0" />
+
+   <Label id="q" text="How much do you like:" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="2" />
+
+   <Label id="q" text="Dogs" GridPane.columnIndex="0"  GridPane.rowIndex="3" />
+
+   <Label id="min" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+
+   <Label id="max" text="5" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+
+   <Label id="q" text="Cats" GridPane.columnIndex="0"  GridPane.rowIndex="5" />
+
+   <Label id="min" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+
+   <Label id="max" text="5" GridPane.columnIndex="11" GridPane.rowIndex="5" />
+
+   <Label id="q" text="Furry" GridPane.columnIndex="0"  GridPane.rowIndex="7" />
+
+   <Label id="min" text="1" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+
+   <Label id="max" text="5" GridPane.columnIndex="11" GridPane.rowIndex="7" />
+
+   <Label id="q" text="Fish" GridPane.columnIndex="0"  GridPane.rowIndex="9" />
+
+   <Label id="min" text="1" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+
+   <Label id="max" text="5" GridPane.columnIndex="11" GridPane.rowIndex="9" />
+
+   <Label id="q" text="Snakes" GridPane.columnIndex="0"  GridPane.rowIndex="11" />
+
+   <Label id="min" text="1" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="11" />
+   <RadioButton mnemonicParsing="false" GridPane.columnIndex="10" GridPane.rowIndex="11" />
+
+   <Label id="max" text="5" GridPane.columnIndex="11" GridPane.rowIndex="11" />
+
+   <HBox alignment="bottom_center" spacing="6" GridPane.columnIndex="7" GridPane.columnSpan="6" GridPane.rowIndex="13">
+      <Button text="Show your results" />
+   </HBox>
+
+</GridPane>

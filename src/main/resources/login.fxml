@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="420.0" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+    <Text id="title-text" text="AdoptMe Login" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+    <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <TextField fx:id="NameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    
+    <Text fx:id="LoginMessage" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <HBox alignment="bottom_center" spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button fx:id="button" onAction="#handleLoginAction" text="Log in" />
+    </HBox>
+
+    <Text id="register-text" text="You don't have an account?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+
+    <HBox alignment="bottom_right" spacing="1" GridPane.columnIndex="2" GridPane.rowIndex="7">
+        <Hyperlink fx:id="registerPressed" onAction="#handleRegisterMenu" text="Register" />
+    </HBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

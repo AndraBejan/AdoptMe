@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="420.0" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+    <Text id="title-text" text="AdoptMe Register" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+    <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <TextField fx:id="NameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Verify Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <PasswordField fx:id="passwordField2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <TextField fx:id="PhoneNumField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+
+    <TextField fx:id="EmailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+
+    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" value="">
+    </ChoiceBox>
+
+    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <HBox alignment="bottom_center" spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="8">
+        <Button onAction="#handleRegisterAction" text="Register" />
+    </HBox>
+
+    <Text id="login-text" text="You already have an account?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+
+    <HBox alignment="bottom_left" spacing="1" GridPane.columnIndex="2" GridPane.rowIndex="10">
+        <Hyperlink fx:id="loginPressed" onAction="#handleLoginMenu" text="Log in" />
+    </HBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
