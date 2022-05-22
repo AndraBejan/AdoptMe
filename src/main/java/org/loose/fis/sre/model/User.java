@@ -4,6 +4,7 @@ import javafx.scene.control.PasswordField;
 import org.dizitart.no2.objects.Id;
 
 import javax.validation.OverridesAttribute;
+import java.util.Objects;
 
 public class User {
     @Id
@@ -13,6 +14,8 @@ public class User {
     private String phone;
     private String email;
     private String role;
+    private String imagePath = "C/Users/bejan/OneDrive/Desktop/CTI/FIS/AdoptME/docs/user.png";
+
 
     public User(String name, String password, String password2, String phone, String email, String role) {
         this.name = name;
@@ -23,8 +26,7 @@ public class User {
         this.role = role;
     }
 
-    public User() {
-    }
+    public User(){}
 
     public String getName() {
         return name;
@@ -34,8 +36,16 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassword() {return password;}
+
+    public String getRole() {return role;}
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     @Override
@@ -45,12 +55,12 @@ public class User {
 
         User user = (User) o;
 
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (password2 != null ? !password2.equals(user.password2) : user.password2 != null) return false;
-        if (phone != null ? !phone.equals(user.phone) : user.phone != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        return role != null ? role.equals(user.role) : user.role == null;
+        if (!Objects.equals(name, user.name)) return false;
+        if (!Objects.equals(password, user.password)) return false;
+        if (!Objects.equals(password2, user.password2)) return false;
+        if (!Objects.equals(phone, user.phone)) return false;
+        if (!Objects.equals(email, user.email)) return false;
+        return Objects.equals(role, user.role);
     }
 
     @Override
