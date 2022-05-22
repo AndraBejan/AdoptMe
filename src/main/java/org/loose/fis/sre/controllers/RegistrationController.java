@@ -34,7 +34,7 @@ public class RegistrationController {
     private TextField EmailField;
     @FXML
     private ChoiceBox role;
-
+//...
     @FXML
     public void initialize() {
         role.getItems().addAll("Client", "Owner");
