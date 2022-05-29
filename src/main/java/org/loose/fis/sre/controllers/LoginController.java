@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.InvalidCredentials;
+import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
 
 import java.io.IOException;
@@ -23,7 +24,8 @@ public class LoginController {
     private TextField NameField;
     @FXML
     private Button button;
-
+    @FXML
+    User user= new User();
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent event) throws IOException {
         try {
@@ -31,12 +33,20 @@ public class LoginController {
             //LoginMessage.setText("Logged in successfully!");
             Stage stage = (Stage) button.getScene().getWindow();
             stage.close();
-
-            Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("menu.fxml"));
-            Scene scene = new Scene (menu);
-            Stage appStage = (Stage) ((Node ) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.show();
+            if (UserService.checkAccountInformation(NameField.getText(), passwordField.getText()) == 1) {
+                Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("Client_menu.fxml"));
+                Scene scene = new Scene(menu);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            }
+            else if (UserService.checkAccountInformation(NameField.getText(), passwordField.getText()) == 2) {
+                Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("Owner_menu.fxml"));
+                Scene scene = new Scene(menu);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            }
         } catch (InvalidCredentials e) {
             LoginMessage.setText(e.getMessage());
         }

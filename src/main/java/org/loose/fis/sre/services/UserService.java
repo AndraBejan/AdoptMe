@@ -27,22 +27,22 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password,String password2, String phone, String email, String role) throws NameAlreadyExistsException, InvalidPassword, NotComplete {
-        checkUserDoesNotAlreadyExist(username);
+    public static void addUser(String name, String password,String password2, String phone, String email, String role) throws NameAlreadyExistsException, InvalidPassword, NotComplete {
+        checkUserDoesNotAlreadyExist(name);
         checkSamePassword(password,password2);
-        checkComplete(username, password, password2, phone, email, role);
-        userRepository.insert(new User(username, encodePassword(username, password), encodePassword(username, password2), phone, email, role));
+        checkComplete(name, password, password2, phone, email, role);
+        userRepository.insert(new User(name, encodePassword(name, password), encodePassword(name, password2), phone, email, role));
     }
 
-    public static void validateUser(String username, String password) throws InvalidCredentials {
-        checkInvalidCredentials(username, password);
+    public static void validateUser(String name, String password) throws InvalidCredentials {
+        checkInvalidCredentials(name, password);
 
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws NameAlreadyExistsException {
+    private static void checkUserDoesNotAlreadyExist(String name) throws NameAlreadyExistsException {
         for (User user : userRepository.find()) {
-            if (Objects.equals(username, user.getName()))
-                throw new NameAlreadyExistsException(username);
+            if (Objects.equals(name, user.getName()))
+                throw new NameAlreadyExistsException(name);
         }
     }
 
@@ -55,9 +55,20 @@ public class UserService {
                     throw new InvalidCredentials();
             }
         }
-
         if(!userExists)
             throw new InvalidCredentials();
+    }
+
+    public static int checkAccountInformation(String name, String password) {
+        for (User user : userRepository.find()) {
+            if (Objects.equals(name, user.getName()) && Objects.equals(encodePassword(name, password), user.getPassword())) {
+                if(Objects.equals(user.getRole(),"Client"))
+                    return 1;
+                else if(Objects.equals(user.getRole(),"Owner"))
+                    return 2;
+            }
+        }
+        return 0;
     }
 
     private static void checkComplete(String name, String password, String password2, String phone, String email, String role) throws NotComplete {
@@ -70,7 +81,7 @@ public class UserService {
         else throw new InvalidPassword();
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
